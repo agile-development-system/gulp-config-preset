@@ -1,3 +1,7 @@
+# [1.0.0](https://gitee.com/agile-development-system/gulppreset/compare/v1.0.0-1...v1.0.0) (2021-06-14)
+
+
+
 # [1.0.0-1](https://gitee.com/agile-development-system/gulppreset/compare/0cd08cbf96f8eed03bb3e6345e3baf1b86c284e6...v1.0.0-1) (2021-06-14)
 
 
