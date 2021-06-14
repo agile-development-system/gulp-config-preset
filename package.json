@@ -1,0 +1,54 @@
+{
+  "name": "@ads/gulp-node-preset",
+  "version": "1.0.0",
+  "description": "构建node应用的gulp配置",
+  "main": "lib/index.js",
+  "scripts": {
+    "lint": "eslint --ext .js,.vue,.json,.md lib",
+    "lint:fix": "eslint --ext .js,.vue,.json,.md lib --fix",
+    "docs": "ads-doc",
+    "commit": "git add . && git commit --no-edit",
+    "postversion": "npm run changelog",
+    "prepublishOnly": "npm run docs && (git add . && git commit -m \"docs(readme): 更新文档\" || true)",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "postchangelog": "git add . && git commit -m \"docs(changelog): 更新CHANGELOG\" || true"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged",
+    "commit-msg": "commitlint -e $GIT_PARAMS",
+    "prepare-commit-msg": "ads-gc-has-msg && exec < /dev/tty && git cz --hook || true"
+  },
+  "lint-staged": {
+    "**/*.{js,json,md}": [
+      "eslint --fix"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/agile-development-system/gulppreset.git"
+  },
+  "keywords": [
+    "ads",
+    "gulp",
+    "node-build",
+    "preset"
+  ],
+  "author": "junyang",
+  "license": "MIT",
+  "devDependencies": {
+    "@ads/cli-plugin-doc": "^1.0.8",
+    "@ads/eslint-config-js": "^1.0.1",
+    "@ads/node-utils": "^1.0.13",
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "commitizen": "^4.2.4",
+    "conventional-changelog": "^3.1.24",
+    "conventional-changelog-cli": "^2.1.1",
+    "cz-conventional-changelog-zh": "^0.0.2",
+    "lint-staged": "^11.0.0",
+    "yorkie": "^2.0.0"
+  },
+  "dependencies": {
+    "@ads/node-utils": "^1.0.10"
+  }
+}
