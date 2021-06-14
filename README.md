@@ -19,7 +19,7 @@ exports.default = gulpPreset();
 
 
 
-### 添加lint脚本
+### 添加build脚本
 
 在`package.json`的`scripts`下添加build命令；
 
