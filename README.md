@@ -1,5 +1,5 @@
 # @ads/gulp-config-preset
-**版本** ：1.0.0-0
+**版本** ：1.0.0-1
 构建npm包的gulp配置
 
 ## 快速开始
@@ -12,7 +12,7 @@ npm i -D @ads/gulp-config-preset
 ### 引入
 ```js
 // gulpfile.js
-const gulpPreset = require('@ads/gulp-node-preset');
+const gulpPreset = require('@ads/gulp-config-preset');
 exports.default = gulpPreset();
 ```
 
@@ -59,7 +59,7 @@ const path = require('path');
  * @param {string} options.output gulp构建出口
  * @returns {import('gulp').TaskFunction}
  */
-function gulppreset({ input = 'src', output = 'lib' }) {
+function gulppreset({ input = 'src', output = 'lib' } = {}) {
     const tsProject = ts.createProject('tsconfig.json');
     const _input = FastPath.getCwdPath(input);
     const _output = FastPath.getCwdPath(output);
