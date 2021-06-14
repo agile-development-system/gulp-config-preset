@@ -1,12 +1,12 @@
-# @ads/gulp-node-preset
+# @ads/gulp-config-preset
 **版本** ：1.0.0-0
-构建node应用的gulp配置
+构建npm包的gulp配置
 
 ## 快速开始
 
 ### 安装
 ```bash
-npm i -D @ads/gulp-node-preset
+npm i -D @ads/gulp-config-preset
 ```
 
 ### 引入
