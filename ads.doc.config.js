@@ -15,6 +15,7 @@ module.exports = (
         ]));
         return {
             output: 'README.md',
+            files: ['./lib/**/*.js'],
             helpers: {
                 devInstall: true,
                 importCode: GenDoc.getFileContent('./docs/import.js'),
