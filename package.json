@@ -1,6 +1,6 @@
 {
   "name": "@ads/gulp-config-preset",
-  "version": "1.0.0-1",
+  "version": "1.0.0",
   "description": "构建npm包的gulp配置",
   "main": "lib/index.js",
   "scripts": {
