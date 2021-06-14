@@ -1,5 +1,5 @@
 # @ads/gulp-config-preset
-**版本** ：1.0.0-1
+**版本** ：1.0.0
 构建npm包的gulp配置
 
 ## 快速开始
@@ -32,6 +32,39 @@ exports.default = gulpPreset();
 }
 ```
 
+
+
+## API文档
+<a name="gulppreset"></a>
+
+### gulppreset(options) ⇒ <code>Undertaker.TaskFunction</code>
+**性质**: 函数
+
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| options | <code>object</code> | gulp出入口配置 |
+| options.input | <code>string</code> | gulp构建入口 |
+| options.output | <code>string</code> | gulp构建出口 |
+
+<a name="gulppreset..clean"></a>
+
+#### gulppreset~clean() ⇒ <code>Promise</code>
+清除构建目录
+
+**性质**: [<code>gulppreset</code>](#gulppreset)的内部方法
+<a name="gulppreset..build"></a>
+
+#### gulppreset~build() ⇒ <code>merge.Merge2Stream</code>
+构建
+
+**性质**: [<code>gulppreset</code>](#gulppreset)的内部方法
+<a name="gulppreset..cp"></a>
+
+#### gulppreset~cp() ⇒ <code>NodeJS.ReadWriteStream</code>
+复制无法构建的文件
+
+**性质**: [<code>gulppreset</code>](#gulppreset)的内部方法
+
  <!-- 渲染后缀内容  -->
 
 
@@ -42,10 +75,6 @@ exports.default = gulpPreset();
 ## 配置源码
 
 ```js
-/*
- * @Author: 锦阳
- * @Create: 2021年05月20日
- */
 const { series, src, dest, parallel } = require('gulp');
 const rimraf = require('rimraf');
 const babel = require('gulp-babel');
@@ -57,7 +86,7 @@ const path = require('path');
  * @param {object} options gulp出入口配置
  * @param {string} options.input gulp构建入口
  * @param {string} options.output gulp构建出口
- * @returns {import('gulp').TaskFunction}
+ * @returns {Undertaker.TaskFunction}
  */
 function gulppreset({ input = 'src', output = 'lib' } = {}) {
     const tsProject = ts.createProject('tsconfig.json');
@@ -74,7 +103,7 @@ function gulppreset({ input = 'src', output = 'lib' } = {}) {
     /**
      * 构建
      *
-     * @returns {import('node:stream').Stream}
+     * @returns {merge.Merge2Stream}
      */
     function build() {
         const tsResult = src(path.join(_input, '**/*.[tj]s'))
@@ -89,7 +118,7 @@ function gulppreset({ input = 'src', output = 'lib' } = {}) {
     /**
      * 复制无法构建的文件
      *
-     * @returns {import('node:stream').Stream}
+     * @returns {NodeJS.ReadWriteStream}
      */
     function cp() {
         return src(path.join(_input, '**/*.![tj]s')).pipe(dest(_output));
