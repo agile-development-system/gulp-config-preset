@@ -1,7 +1,7 @@
 {
-  "name": "@ads/gulp-node-preset",
+  "name": "@ads/gulp-config-preset",
   "version": "1.0.0-0",
-  "description": "构建node应用的gulp配置",
+  "description": "构建npm包的gulp配置",
   "main": "lib/index.js",
   "scripts": {
     "lint": "eslint --ext .js,.vue,.json,.md lib",
