@@ -1,15 +1,19 @@
 # @agds/gulp-config-preset
+
 **版本** ：1.0.0
+
 构建npm包的gulp配置
 
 ## 快速开始
 
 ### 安装
+
 ```bash
 npm i -D @agds/gulp-config-preset
 ```
 
 ### 引入
+
 ```js
 // gulpfile.js
 const gulpPreset = require('@agds/gulp-config-preset');
@@ -121,7 +125,7 @@ function gulppreset({ input = 'src', output = 'lib' } = {}) {
      * @returns {NodeJS.ReadWriteStream}
      */
     function cp() {
-        return src(path.join(_input, '**/*.![tj]s')).pipe(dest(_output));
+        return src(path.join(_input, '**/*.!([tj]s)')).pipe(dest(_output));
     }
     return series(clean, parallel(build, cp));
 }
