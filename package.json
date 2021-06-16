@@ -23,6 +23,9 @@
       "eslint --fix"
     ]
   },
+  "files": [
+    "lib"
+  ],
   "repository": {
     "type": "git",
     "url": "https://gitee.com/agile-development-system/gulp-config-preset.git"
