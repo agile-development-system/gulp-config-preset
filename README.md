@@ -1,6 +1,6 @@
 # @agds/gulp-config-preset
 
-**版本** ：1.0.0
+**版本** ：1.0.1
 
 构建npm包的gulp配置
 
