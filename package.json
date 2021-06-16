@@ -8,7 +8,7 @@
     "lint:fix": "eslint --ext .js,.json,.md lib --fix",
     "docs": "agds-doc",
     "commit": "git add . && git commit --no-edit",
-    "postversion": "npm run changelog && git push && git push",
+    "postversion": "npm run changelog",
     "prepublishOnly": "npm run docs && (git add . && git commit -m \"docs(readme): 更新文档\" || true)",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "postchangelog": "git add . && git commit -m \"docs(changelog): 更新CHANGELOG\" || true"
