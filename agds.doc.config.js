@@ -2,7 +2,7 @@
  * @Author: 锦阳
  * @Create: 2021年05月31日
  */
-const GenDoc = require('@ads/cli-plugin-doc');
+const GenDoc = require('@agds/cli-plugin-doc');
 module.exports = (
     /**
      * 配置参数

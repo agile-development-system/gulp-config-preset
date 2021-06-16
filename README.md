@@ -1,4 +1,4 @@
-# @ads/gulp-config-preset
+# @agds/gulp-config-preset
 **版本** ：1.0.0
 构建npm包的gulp配置
 
@@ -6,13 +6,13 @@
 
 ### 安装
 ```bash
-npm i -D @ads/gulp-config-preset
+npm i -D @agds/gulp-config-preset
 ```
 
 ### 引入
 ```js
 // gulpfile.js
-const gulpPreset = require('@ads/gulp-config-preset');
+const gulpPreset = require('@agds/gulp-config-preset');
 exports.default = gulpPreset();
 ```
 
@@ -80,7 +80,7 @@ const rimraf = require('rimraf');
 const babel = require('gulp-babel');
 const ts = require('gulp-typescript');
 const merge = require('merge2');
-const { FastPath } = require('@ads/node-utils');
+const { FastPath } = require('@agds/node-utils');
 const path = require('path');
 /**
  * @param {object} options gulp出入口配置

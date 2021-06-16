@@ -1,3 +1,3 @@
 // gulpfile.js
-const gulpPreset = require('@ads/gulp-config-preset');
+const gulpPreset = require('@agds/gulp-config-preset');
 exports.default = gulpPreset();
