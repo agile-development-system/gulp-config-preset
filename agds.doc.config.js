@@ -3,6 +3,7 @@
  * @Create: 2021年05月31日
  */
 const GenDoc = require('@agds/cli-plugin-doc');
+const preset = require('@agds/agds-doc-preset');
 module.exports = (
     /**
      * 配置参数
@@ -14,10 +15,9 @@ module.exports = (
             GenDoc.getFilesCode({ dir: './lib', files: ['*'] }),
         ]));
         return {
-            output: 'README.md',
+            presets: [preset],
             files: ['./lib/**/*.js'],
             helpers: {
-                devInstall: true,
                 importCode: GenDoc.getFileContent('./docs/import.js'),
                 remark: GenDoc.getFileContent('./docs/usage.md'),
                 postfixes: [
